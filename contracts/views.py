@@ -3,11 +3,12 @@ from rest_framework import viewsets
 from rest_framework.response import Response
 from .import serializers, models
 from rest_framework.permissions import IsAuthenticated
+from contracts.permissions import IsManagementOrSaleOrSupportInContractView
 
 
 
 class ContractViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsManagementOrSaleOrSupportInContractView]
     http_method_names = ["get", "post", "put", "delete"]
     serializer_class = serializers.ContractSerializer
     
