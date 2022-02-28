@@ -24,10 +24,18 @@ class UserForm(forms.ModelForm):
 class UserAdmin(admin.ModelAdmin):
     
     form = UserForm
+    def group(self, user):
+        groups = []
+        for group in user.groups.all():
+            groups.append(group.name)
+        return ' '.join(groups)
+    group.short_description = 'Groups'
 
-    list_display = ('first_name', 'last_name', 'username', 'password', "is_admin")
+    list_display = ('first_name', 'last_name', 'username', 'password', "is_admin","group")
     list_filter = ("user_type",)
 
+    
+        
 
 
     # save du form

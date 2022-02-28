@@ -1,6 +1,11 @@
 from rest_framework import serializers
 
-from accounts.models import User
+from accounts.models import User, Group
+
+class GroupSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Group
+        fields = ('name',)
 
 class UserSerializer(serializers.ModelSerializer):
     

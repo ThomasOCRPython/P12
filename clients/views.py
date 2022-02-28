@@ -10,6 +10,7 @@ from accounts.models import User
 
 
 
+
 class ClientViewSet(viewsets.ModelViewSet):
     
     
@@ -22,9 +23,9 @@ class ClientViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         
         
-        # user_type = self.request.user.user_type
-        # if user_type == 'SUPPORT':
-        #     return models.Client.objects.filter(event__support_contact=self.request.user).distinct()
+        user_type = self.request.user.user_type
+        if user_type == 'SUPPORT':
+            return models.Client.objects.filter(event__support_contact=self.request.user).distinct()
         return models.Client.objects.all()
 
 
@@ -34,6 +35,7 @@ class ClientViewSet(viewsets.ModelViewSet):
         request.data["sale_user"] = request.user.pk
         print(request.data["sale_user"] , request.user.pk,11111111111,request.user.user_type)
         request.POST._mutable = False
+
         
         return super(ClientViewSet, self).create(request, *args, **kwargs)
 
