@@ -1,0 +1,3 @@
+[flake8]
+exclude = env/, ./accounts/migrations/, ./events/migrations/, ./clients/migrations/,./contracts/migrations/
+max-line-length = 119
