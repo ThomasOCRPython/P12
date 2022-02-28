@@ -4,6 +4,9 @@
 
 <span style="color:#696969">Application pour l'événementiel utilisant un CRM Django et PostgreSQL.</span>
 
+##  Base de données
+
+<span>Diagramme des relations d'entité: (https://lucid.app/lucidchart/7c79f2bb-42ed-495e-b613-1004835e07d6/view?page=HWEp-vi-RSFO&invitationId=inv_9def0fb4-a365-4cb9-954c-db5fbb073ef8#)</span>
 ## <span style="color:#007ee6"> Pré-requis </span>
 
 * <span style="color:#696969">Editeur de code
